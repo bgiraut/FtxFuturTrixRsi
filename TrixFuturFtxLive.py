@@ -224,7 +224,7 @@ def main(argv):
             quantityMax = float(usdAmount)/actualPrice
             
             #Pour debugger
-            quantityMax = 0
+            #quantityMax = 0
             # -- Create a market order Long --
             longOrder = ftx.place_market_order(
                 perpSymbol,
@@ -252,7 +252,7 @@ def main(argv):
             quantityMax = float(usdAmount)/actualPrice
 
             #Pour debugger
-            quantityMax = 0
+            #quantityMax = 0
             # -- Create a market order Long --
             shortOrder = ftx.place_market_order(
                 perpSymbol,

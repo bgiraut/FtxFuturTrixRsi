@@ -1,0 +1,61 @@
+{
+	"DEFAULT": {
+        "rsiWindow":"21",
+		"rsiMin":"0.28",
+		"rsiMax":"0.7",
+        "trixLength":"9",
+        "trixSignal":"21"
+    },
+    "AAVE-PERP": {
+        "rsiWindow":"21",
+        "trixLength":"9",
+        "trixSignal":"21"
+    },
+	"ADA-PERP": {
+        "rsiWindow":"14",
+        "trixLength":"7",
+        "trixSignal":"17"
+    },
+	"ARPA-PERP": {
+        "rsiWindow":"9",
+        "trixLength":"8",
+        "trixSignal":"19"
+    },
+	"ATOM-PERP": {
+        "rsiWindow":"14",
+        "trixLength":"8",
+        "trixSignal":"16"
+    },
+	"AUDIO-PERP": {
+        "rsiWindow":"7",
+        "trixLength":"7",
+        "trixSignal":"15"
+    },
+	"AVAX-PERP": {
+        "rsiWindow":"10",
+        "trixLength":"7",
+        "trixSignal":"20"
+    },
+	"LIT-PERP": {
+        "rsiWindow":"17",
+        "trixLength":"10",
+        "trixSignal":"24"
+    },
+	"PEOPLE-PERP": {
+        "rsiWindow":"7",
+        "trixLength":"9",
+        "trixSignal":"21"
+    },
+	"RSR-PERP": {
+        "rsiWindow":"13",
+        "trixLength":"8",
+        "trixSignal":"18"
+    },
+	"WAVES-PERP": {
+        "rsiWindow":"28",
+		"rsiMin":"0.2",
+		"rsiMax":"0.82",
+        "trixLength":"8",
+        "trixSignal":"22"
+    }
+}

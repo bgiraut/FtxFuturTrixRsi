@@ -214,6 +214,26 @@ def main(argv):
     # -- Get actual price --
     actualPrice = df.iloc[-1]['close']
 
+    if len(ftx.get_open_position([perpSymbol])) != 0:
+        # -- Check if you have a LONG open --
+        if ftx.get_open_position([perpSymbol])[0]['side'] == 'long':
+            # -- Check if you have to close your LONG --
+            if closeLongCondition(df.iloc[-2], rsiMin):
+                ftx.close_all_open_position([perpSymbol])
+                ftx.cancel_all_open_order(perpSymbol)
+                print('Close my LONG position at ', actualPrice)
+            else:
+                print("A LONG is running and I don't want to stop it")
+        # -- Check if you have a SHORT open --
+        elif ftx.get_open_position([perpSymbol])[0]['side'] == 'short':
+            if closeShortCondition(df.iloc[-2], rsiMax):
+                ftx.close_all_open_position([perpSymbol])
+                ftx.cancel_all_open_order(perpSymbol)
+                print('Close my SHORT position at ', actualPrice)
+            else:
+                print("A SHORT is running and I don't want to stop it")
+
+
     # -- Check if you have no position running --
     if len(ftx.get_open_position([perpSymbol])) == 0:
         # -- Check if you have to open a LONG --
@@ -275,25 +295,6 @@ def main(argv):
 
         else:
             print("No opportunity to take")
-
-    else:
-        # -- Check if you have a LONG open --
-        if ftx.get_open_position([perpSymbol])[0]['side'] == 'long':
-            # -- Check if you have to close your LONG --
-            if closeLongCondition(df.iloc[-2], rsiMin):
-                ftx.close_all_open_position([perpSymbol])
-                ftx.cancel_all_open_order(perpSymbol)
-                print('Close my LONG position')
-            else:
-                print("A LONG is running and I don't want to stop it")
-        # -- Check if you have a SHORT open --
-        elif ftx.get_open_position([perpSymbol])[0]['side'] == 'short':
-            if closeShortCondition(df.iloc[-2], rsiMax):
-                ftx.close_all_open_position([perpSymbol])
-                ftx.cancel_all_open_order(perpSymbol)
-                print('Close my SHORT position')
-            else:
-                print("A SHORT is running and I don't want to stop it")
 
 
 

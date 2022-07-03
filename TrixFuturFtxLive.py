@@ -191,12 +191,12 @@ def main(argv):
     df = ftx.get_last_historical(perpSymbol, '1h', 250)
 
     # -- indicators --
-    #df['EMA1']= ta.trend.ema_indicator(close=df['close'], window=7)
-    #df['EMA2']= ta.trend.ema_indicator(close=df['close'], window=30)
-    #df['EMA3']= ta.trend.ema_indicator(close=df['close'], window=50)
-    #df['EMA4']= ta.trend.ema_indicator(close=df['close'], window=100)
-    #df['EMA5']= ta.trend.ema_indicator(close=df['close'], window=121)
-    #df['EMA6']= ta.trend.ema_indicator(close=df['close'], window=218)
+    df['EMA1']= ta.trend.ema_indicator(close=df['close'], window=7)
+    df['EMA2']= ta.trend.ema_indicator(close=df['close'], window=30)
+    df['EMA3']= ta.trend.ema_indicator(close=df['close'], window=50)
+    df['EMA4']= ta.trend.ema_indicator(close=df['close'], window=100)
+    df['EMA5']= ta.trend.ema_indicator(close=df['close'], window=121)
+    df['EMA6']= ta.trend.ema_indicator(close=df['close'], window=218)
 
 
 
